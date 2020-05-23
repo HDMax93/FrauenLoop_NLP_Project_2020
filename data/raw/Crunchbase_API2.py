@@ -9,7 +9,7 @@ from backoff import on_exception, expo
 
 FIFTEEN_MINUTES = 900
 
-@on_exception(expo, RateLimitException, max_tries=8)
+@on_exception(expo, RateLimitException, max_tries=50)
 @limits(calls=15, period=FIFTEEN_MINUTES)
 def call_api(url, params):
     response = requests.get(url, params)
@@ -24,13 +24,27 @@ querystring = {"locations":"Berlin","organization_types":"company","sort_order":
 
 call_api(url, params = querystring)
 
+
+"""
+response = requests.request("GET", url, headers=headers)
+​
+if response.status_code == 200:
+  # Success logic
+elif response.status_code == 429:
+  time.sleep(int(response.headers["Retry-After"]))
+else:
+  # Handle other response codes
+
+  """
+
+
+
 """
 # Load credentials from json file
 with open("crunchbase_credentials.json", "r") as file:
     creds = json.load(file)
-"""
 
-"""
+
 response = requests.request("GET", url, params=querystring)
 
 print(response.text)
