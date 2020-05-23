@@ -1,4 +1,5 @@
-data/*.csv
-data/*.xlsx
-data/*.pkl
-data/crunchbase_credentials.json
+# Ignore the following files and file types
+
+*.csv
+*.xlsx
+crunchbase_credentials.json
