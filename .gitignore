@@ -1,3 +1,4 @@
 data/*.csv
 data/*.xlsx
 data/*.pkl
+data/raw/crunchbase_credentials.json
