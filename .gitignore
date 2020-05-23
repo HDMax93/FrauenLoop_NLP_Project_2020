@@ -1,5 +1,4 @@
 # Ignore the following files and file types
-
-*.csv
-*.xlsx
-crunchbase_credentials.json
+data/*.csv
+data/*.xlsx
+data/raw/crunchbase_credentials.json
