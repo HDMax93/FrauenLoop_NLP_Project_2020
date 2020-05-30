@@ -3,4 +3,5 @@
 *.xlsx
 *.pkl 
 *.vscode
+*.json
 data/raw/crunchbase_credentials.json
