@@ -6,7 +6,6 @@ import random
 from ratelimit import limits, RateLimitException
 from backoff import on_exception, expo
 
-
 FIFTEEN_MINUTES = 900
 
 @on_exception(expo, RateLimitException, max_tries=50)
