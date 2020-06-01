@@ -10,24 +10,23 @@ credentials = service_account.Credentials.from_service_account_file("/Users/Henr
 
 scoped_credentials = credentials.with_scopes(['https://www.googleapis.com/auth/cloud-platform'])
 
-
 client = bigquery.Client(credentials=credentials, 
 project = credentials.project_id)
-
 
 ### Verifying authentication
 
 def implicit():
-    from google.cloud import storage
+    from google.cloud import bigquery
 
     # If you don't specify credentials when constructing the client, the
     # client library will look for credentials in the environment.
-    storage_client = storage.Client()
-
+    client = bigquery.Client(credentials=credentials, project = credentials.project_id)
+    
     # Make an authenticated API request
-    buckets = list(storage_client.list_buckets())
+    buckets = list(client.list_buckets())
     print(buckets)
 
+implicit()
 
 ### Import dataset
 
@@ -52,10 +51,14 @@ LIMIT 10""")
 
     results = query_job.result()  # Waits for job to complete.
 
+print(results)
+
+'''
 ### need to fix this part of the code 
     for row in results:
-        print("{} : {} views".format(row.url, row.view_count))
-
+        print(row.name)
 
 if __name__ == '__main__':
     query_stackoverflow()
+
+'''
