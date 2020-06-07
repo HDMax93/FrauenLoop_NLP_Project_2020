@@ -9,5 +9,6 @@ pip install --upgrade google-cloud-bigquery
 ### Packages needed for pre-processing data
 
 pip install spacy
+python -m spacy download en_core_web_sm
 
 ### Packages needed for visualization
