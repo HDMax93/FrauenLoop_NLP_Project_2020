@@ -4,9 +4,10 @@ pip install pandas
 
 ### Packages needed for retrieving the data from Google BigQuery
 
-# install client library
 pip install --upgrade google-cloud-bigquery
 
 ### Packages needed for pre-processing data
+
+pip install spacy
 
 ### Packages needed for visualization
