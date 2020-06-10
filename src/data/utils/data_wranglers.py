@@ -9,14 +9,14 @@ import pandas as pd
 
 
 def read_data():
-    fn = 'amazon_co-ecommerce_sample_short.csv'
+    fn = 'stackoverflow_raw_sample.csv'
     df = pd.read_csv(os.path.join('data', fn))
     return df
 
 
-def wrangle_amazon_reviews() -> pd.DataFrame:
+def wrangle_stackoverflow_answers() -> pd.DataFrame:
     df = read_data()
-    reviews_df = df['customer_reviews'].str.split(' // ', n=4, expand=True)
+    reviews_df = df['answer_text'].str.split(' // ', n=4, expand=True)
 
     df['review_title'] = reviews_df[0]
     df['review_rating'] = reviews_df[1]

@@ -8,6 +8,14 @@ import spacy
 
 nlp = spacy.load('en_core_web_sm')
 
+# Get rid of extras, split, and join for text,title, and cleaned paragraphs
+def preprocess(x):
+    x = re.sub(r'<code>.*?</code>', '', x.lower())
+    x = re.sub(r'<p>', '', x.lower())
+    x = re.sub('[^a-z\s]', '', x.lower())
+    x = [w for w in x.split() if w not in stopwords]
+    return ' '.join(x)
+
 
 def text2sentences(text: str) -> List[str]:
     """
@@ -21,8 +29,6 @@ def text2sentences(text: str) -> List[str]:
     sentences_text = list()
     for sentence in doc.sents:
         sentences_text.append(sentence.text)
-    # or, with list comprehension:
-    # sentences_text = [sentence.text for token in doc.sents]
 
     return sentences_text
 
