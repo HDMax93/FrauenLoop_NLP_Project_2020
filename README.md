@@ -1,2 +1,2 @@
-# FrauenLoop_NLP_Project_2020
-Collaborative NLP project as part of FrauenLoop ML course in summer 2020
+# PREDICTING HELPFULNESS OF STACKOVERFLOW ANSWERS
+This is work-in-progress. Collaborative NLP project as part of FrauenLoop ML course in summer 2020
