@@ -3,4 +3,5 @@
 *.xlsx
 *.pkl 
 *.vscode
+* .DS_Store
 data/raw/GoogleBigQuery_key.json
