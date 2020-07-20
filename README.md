@@ -11,9 +11,16 @@ This project was part of a Machine Learning course hosted by [FrauenLoop](https:
 - XXXX
 - XXXX
 
+### Key Insights
+
+1. 
+2. 
+3. 
+
 ### Navigating this repo
 
 - You will find the relevant code to execute in the [source folder](src/)
+- If you would prefer not to retrieve the data yourself using Google BigQuery API, you can download the sampled dataset here. If you use this dataset, you will not need to execute the data_retrieval.py file, start by running the preprocessing.py file instead.
 
 ### Giving feedback
 
