@@ -15,7 +15,7 @@ import re
 
 ### Import feature extraction help functions
 
-from utils.feature_helpers import Similarity, JaccardSimilarity, WordCounter, CodeCheck, CodeCounter, Ngrams
+from src.general_utils import Similarity, JaccardSimilarity, WordCounter, CodeCheck, CodeCounter, Ngrams, TopTagEncoder
 
 ### Read in dataset
 
