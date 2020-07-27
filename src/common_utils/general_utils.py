@@ -339,6 +339,7 @@ class TopTagEncoder(BaseEstimator, TransformerMixin):
         df_new = df[['tag_list_clean']].copy()
         ### List of the top 50 tags on Stack Overflow
         var_list = ['javascript', 'java', 'python', 'c#', 'php', 'android', 'html', 'c++', 'jquery', 'css', 'ios', 'mysql', 'sql', 'asp.net', 'r', 'node.js', 'arrays', 'c', 'ruby-on-rails', '.net', 'json', 'objective-c', 'sql-server', 'swift', 'angularjs', 'python-3.x', 'django', 'reactjs', 'excel', 'regex', 'angular', 'iphone', 'ruby', 'ajax', 'xml', 'linux', 'asp.net-mvc', 'vba', 'spring', 'database', 'wordpress', 'panas', 'wpf', 'string', 'laravel', 'xcode', 'windows', 'mongodb', 'vb.net', 'bash']
+        ### write function to generate this list!
         for var in var_list:
             ### Create column name "has_tagname" for each tag in list
             new_var_name = "%s_%s" % ("has", var)
