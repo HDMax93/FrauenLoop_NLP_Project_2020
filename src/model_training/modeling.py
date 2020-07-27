@@ -14,7 +14,6 @@ import numpy as np
 import re
 
 ### Import packages for feature extraction from 
-
 from common_utils.general_utils import (Similarity, JaccardSimilarity, WordCounter, CodeCheck, CodeCounter, Ngrams, TopTagEncoder)
 
 ### Import packages for modeling
