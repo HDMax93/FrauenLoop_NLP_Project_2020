@@ -1,5 +1,6 @@
 ### The following packages are needed for the NLP project
 
+pip install numpy
 pip install pandas
 
 ### Packages needed for retrieving the data from Google BigQuery
@@ -8,12 +9,14 @@ pip install --upgrade google-cloud-bigquery
 
 ### Packages needed for pre-processing data
 
-pip install spacy
 pip install nltk
-python -m spacy download en_core_web_sm
 
 ### Packages needed for visualization
 
 pip install matplotlib
 pip install seaborn
 pip install plotly
+
+### Packages needed for modeling
+
+pip install -U scikit-learn
