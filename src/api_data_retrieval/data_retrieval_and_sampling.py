@@ -42,7 +42,7 @@ SELECT
       pq.score as question_score, pa.score as answer_score, pq.id as question_id, pa.parent_id as question_id_check, pq.title as question_title, pq.body       as question_text, pq.answer_count, pq.comment_count, pq.creation_date, pq.tags, pq.view_count, pa.body as answer_text
 FROM `bigquery-public-data.stackoverflow.posts_questions` pq
 INNER JOIN `bigquery-public-data.stackoverflow.posts_answers` pa ON pq.id = pa.parent_id
-WHERE pa.creation_date > "2019-05-30 00:00:00.000 UTC"
+WHERE pa.creation_date BETWEEN "2019-05-30 00:00:00.000 UTC" AND "2020-05-30 00:00:00.000 UTC"
 """
 
 dataframe = (
@@ -52,6 +52,7 @@ dataframe = (
 )
 
 len(dataframe)
+
 
 ### Save dataframe to a csv file
 
@@ -114,12 +115,6 @@ base_path = Path("__file__").parent
 full_path = (base_path / "../../data/raw/stackoverflow_raw_views.csv").resolve()
 
 dataframe_views.to_csv(os.path.join(full_path))
-
-
-### Temporary code to quickly open dataset
-
-dataframe_views = pd.read_csv("/Users/HenriekeMax/Documents/Career_Development/GitHub/Predicting-Helpfulness-Of-Stackoverflow-Answers/data/raw/stackoverflow_raw_views.csv")
-
 
 ### Assign category (bad, good, great) for score; ignore zero scores 
 
