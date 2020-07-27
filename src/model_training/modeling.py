@@ -14,11 +14,8 @@ import numpy as np
 import re
 
 ### Import packages for feature extraction from 
-base_path = Path("__file__").parent
-full_path = (base_path / "../common_utils/").resolve()
-sys.path.append(full_path)
-from general_utils import Similarity
-# , JaccardSimilarity, WordCounter, CodeCheck, CodeCounter, Ngrams, TopTagEncoder)
+
+from common_utils.general_utils import (Similarity, JaccardSimilarity, WordCounter, CodeCheck, CodeCounter, Ngrams, TopTagEncoder)
 
 ### Import packages for modeling
 from sklearn.model_selection import train_test_split
