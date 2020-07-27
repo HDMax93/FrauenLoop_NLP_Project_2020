@@ -41,8 +41,8 @@ Such a live prediction/rating of answers can be of use across online help fora, 
 
     *Distribution of Stack Overflow answer scores*
     <p align="center">
-    <img src="https://raw.githubusercontent.com/HDMax93/Predicting-Helpfulness-Of-Stackoverflow-Answers/master/reports/figures/stackoverflow_answerscore_distribution.png" width="450"/>
-    </p>
+    <img src="https://raw.githubusercontent.com/HDMax93/Predicting-Helpfulness-Of-Stackoverflow-Answers/master/reports/figures/stackoverflow_answerscore_distribution.png" width="450"/> </p>
+    
     
     - [data manipulation](src/data_manipulation): Run this script to preprocess the data you retrieved using Google BigQuery API or that you downloaded.
     - [feature extraction](src/feature_extraction): This folder contains the script for testing if the features are extracted as desired, using the [feature extraction classes](src/common_utils).
