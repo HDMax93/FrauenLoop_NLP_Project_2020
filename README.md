@@ -38,15 +38,17 @@ Such a live prediction/rating of answers can be of use across online help fora, 
         3. Place the JSON file (see step b) with your key in your directory [here](data/raw) and name it "GoogleBigQuery_key.json".
     **Alternatively**, just download the **final sample** dataset [here](https://drive.google.com/file/d/1ve6gzOKgJhdESAv2MLImbqZRi4VsSL5q/view?usp=sharing) and place it [here](data/raw) in your repository. If you use this dataset, you will not need to execute the data_retrieval_and_sampling.py file, start by directly running the [preprocessing.py script](src/data_manipulation) instead.
     - [data exploration](src/data_exploration): You will find some code to explore the data visually in this folder. Graphs are saved in the [reports/figures](reports/figures) folder.
+
     *Distribution of Stack Overflow answer scores*
-    ![Distribution of Answer Scores](https://raw.githubusercontent.com/HDMax93/Predicting-Helpfulness-Of-Stackoverflow-Answers/master/reports/figures/stackoverflow_answerscore_distribution.png =48x48)
+    ![Distribution of Answer Scores](https://raw.githubusercontent.com/HDMax93/Predicting-Helpfulness-Of-Stackoverflow-Answers/master/reports/figures/stackoverflow_answerscore_distribution.png)
+
+- First 
 
     <img src="https://raw.githubusercontent.com/HDMax93/Predicting-Helpfulness-Of-Stackoverflow-Answers/master/reports/figures/stackoverflow_answerscore_distribution.png" width="48">
 
-    <img src="https://raw.githubusercontent.com/HDMax93/Predicting-Helpfulness-Of-Stackoverflow-Answers/master/reports/figures/stackoverflow_answerscore_distribution.png" width="300" />
+- Second
 
-<img src="https://raw.githubusercontent.com/HDMax93/Predicting-Helpfulness-Of-Stackoverflow-Answers/master/reports/figures/stackoverflow_answerscore_distribution.png/100/100">
-
+    <img src="https://raw.githubusercontent.com/HDMax93/Predicting-Helpfulness-Of-Stackoverflow-Answers/master/reports/figures/stackoverflow_answerscore_distribution.png" width="100" />
 
     - [data manipulation](src/data_manipulation): Run this script to preprocess the data you retrieved using Google BigQuery API or that you downloaded.
     - [feature extraction](src/feature_extraction): This folder contains the script for testing if the features are extracted as desired, using the [feature extraction classes](src/common_utils).
