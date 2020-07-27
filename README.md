@@ -26,7 +26,7 @@ Such a live prediction/rating of answers can be of use across online help fora, 
 2. Contrary to intial assumptions, the text data consisting of answers, questions and answer tags could not sufficiently help differentiate between a bad, good and great answer.
 3. Additional data and features are needed to provide predictions on the quality of user answers with a high accuracy.
 
-### The Data
+### Data
 
 - The data for this project was retrieved using Goolge BigQuery API. Based on a dataset containing all Stack Overflow questions and answers between May 2019 and May 2020, an equal amount of bad (answer score < 0), good (answer score of 1-6) and great answers (answer score of 7+) were retrieved, resulting in a dataset with 30,0000 observations.
 - You can learn more about the dataset and explore it using SQL [here](https://console.cloud.google.com/marketplace/product/stack-exchange/stack-overflow?project=frauenloop-nlp-2020&folder=&organizationId=). 
@@ -39,7 +39,7 @@ Such a live prediction/rating of answers can be of use across online help fora, 
         1. Set up an account on [Google Cloud Platform](https://console.cloud.google.com/).
         2. Follow [steps 1-4](https://cloud.google.com/bigquery/docs/quickstarts/quickstart-client-libraries#client-libraries-install-python) on using client libraries.
         3. Place the JSON file (see 2) with your key in your directory under "PREDICTING-HELPFULNESS-OF-STACKOVERFLOW-ANSWERS/data/raw/GoogleBigQuery_key.json" and name it "GoogleBigQuery_key.json".
-    **Alternatively**, just download the "final sample" dataset [here](DOWNLOAD LINK HERE) and place it [here](data/raw) in your repository. If you use this dataset, you will not need to execute the data_retrieval_and_sampling.py file, start by directly running the preprocessing.py script instead.
+    **Alternatively**, just download the "final sample" dataset [here](https://drive.google.com/file/d/1ve6gzOKgJhdESAv2MLImbqZRi4VsSL5q/view?usp=sharing) and place it [here](data/raw) in your repository. If you use this dataset, you will not need to execute the data_retrieval_and_sampling.py file, start by directly running the preprocessing.py script instead.
     - [data exploration](src/data_exploration): You will find some code to explore the data visually in this folder. Graphs are saved in the [reports/figures](reports/figures) folder.
 
     ![Distribution of Answer Scores](https://raw.githubusercontent.com/HDMax93/Predicting-Helpfulness-Of-Stackoverflow-Answers/master/reports/figures/stackoverflow_answerscore_distribution.png)
