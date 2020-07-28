@@ -37,16 +37,16 @@ Such a live prediction/rating of answers can be of use across online help fora, 
         2. Follow [steps 1-4](https://cloud.google.com/bigquery/docs/quickstarts/quickstart-client-libraries#client-libraries-install-python) on using client libraries.
         3. Place the JSON file (see step b) with your key in your directory [here](data/raw) and name it "GoogleBigQuery_key.json".
     **Alternatively**, just download the **final sample** dataset [here](https://drive.google.com/file/d/1ve6gzOKgJhdESAv2MLImbqZRi4VsSL5q/view?usp=sharing) and place it [here](data/raw) in your repository. If you use this dataset, you will not need to execute the data_retrieval_and_sampling.py file, simply start by directly running the [preprocessing.py script](src/preprocessing.py) instead.
-    - data exploration: The data was explored iteratively and throughout the data retrieval, preprocessing and modeling process, so scripts to explore the data are contained throughout the py-scripts. Graphs are saved in the [reports/figures](reports/figures) folder.
+    - data exploration: The data was explored iteratively throughout the data retrieval, preprocessing and modeling process, so scripts to explore the data are contained throughout the py-scripts. Graphs are saved in the [reports/figures](reports/figures) folder.
 
     *Distribution of Stack Overflow answer scores*
     <p align="center">
     <img src="https://raw.githubusercontent.com/HDMax93/Predicting-Helpfulness-Of-Stackoverflow-Answers/master/reports/figures/stackoverflow_answerscore_distribution.png" width="450"/> </p>
     
     
-    - [data manipulation](src/data_manipulation): Run this script to preprocess the data you retrieved using Google BigQuery API or that you downloaded.
-    - [feature extraction](src/feature_extraction): This folder contains the script for testing if the features are extracted as desired, using the [feature extraction classes](src/common_utils).
-    - [model training](src/model_training): You will find the script for choosing, training and hypertuning the model here.
+    - [data manipulation](src/preprocessing.py): Run this script to preprocess the data you retrieved using Google BigQuery API or that you downloaded.
+    - [feature extraction](src/feature_extraction.py): This file contains the script for testing if the features are extracted as desired, using the [feature extraction classes](src/common_utils/feature_helpers) in the [common utils folder](src/common_utils).
+    - [model training](src/modeling.py): You will find the script for choosing, training and hypertuning the model here.
 - [final model](models): If you execute the above scripts, your final model will be stored in this place. If you would like to download the final model directly, you can do so by clicking on [this link](DOWNLOAD LINK HERE).
 - [notebooks](notebooks): This folder contains some exploratory notebooks created in the process of finding the model.
 
