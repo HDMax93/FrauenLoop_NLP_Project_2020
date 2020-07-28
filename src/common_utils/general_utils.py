@@ -16,8 +16,6 @@ class JaccardSimilarity(BaseEstimator, TransformerMixin):
     """
     A class used to represent similarity of two strings
 
-    ...
-
     Attributes
     ----------
     df : dataframe
@@ -44,15 +42,16 @@ class JaccardSimilarity(BaseEstimator, TransformerMixin):
 
         ### Define Jaccard Similarity function
         def get_jaccard_sim(column1, column2): 
-        """Calculates Jaccard-Similarity
+            """Calculates Jaccard-Similarity
 
-        Parameters
-        ----------
-        column1 : column in dataframe
-                first text/object column in dataframe
-        column2: column in dataframe
-                second text/object in dataframe
-        """
+            Parameters
+            ----------
+            column1 : column in dataframe
+                    first text/object column in dataframe
+            column2: column in dataframe
+                    second text/object in dataframe
+            """
+
             a = set(column1.split()) 
             b = set(column2.split())
             c = a.intersection(b)
@@ -177,8 +176,6 @@ class CodeCheck(BaseEstimator, TransformerMixin):
         """
         A class used to check if a string contains a code snippets
 
-        ...
-
         Attributes
         ----------
         df : dataframe
@@ -189,7 +186,7 @@ class CodeCheck(BaseEstimator, TransformerMixin):
         transform
             Takes text columns in a dataframe to returns 1 if string contains code and 0 if it does not
         """
-
+    
     def __init__(self, df):
         pass
     
@@ -198,7 +195,7 @@ class CodeCheck(BaseEstimator, TransformerMixin):
 
         Parameters
         ----------
-        df : dataframe
+        df: dataframe
             a dataframe containing the column with string/text that may contain code snippet
         """
 
@@ -219,14 +216,12 @@ class CodeCheck(BaseEstimator, TransformerMixin):
 class CodeCounter(BaseEstimator, TransformerMixin):
         """
         A class used to count how many code snippets a string contains
-
-        ...
-
+        
         Attributes
         ----------
         df : dataframe
             a dataframe containing column with text that may or may not contain code snippets
-
+        
         Methods
         -------
         transform
@@ -310,8 +305,6 @@ class Ngrams(BaseEstimator, TransformerMixin):
 class TopTagEncoder(BaseEstimator, TransformerMixin):
         """
         A class that one-hot encodes based on a list of strings, by checking for existence of each string in text-column of dataframe
-
-        ...
 
         Attributes
         ----------
