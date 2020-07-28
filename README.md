@@ -30,14 +30,14 @@ Such a live prediction/rating of answers can be of use across online help fora, 
 
 ### Navigating this repo
 
-- [Requirements](PREDICTING-HELPFULNESS-OF-STACKOVERFLOW-ANSWERS): Before starting your project, make sure to set up a project environment and to install all the required packages for the project. 
+- [Requirements](https://github.com/HDMax93/Predicting-Helpfulness-Of-Stackoverflow-Answers/blob/master/requirements.txt): Before starting your project, make sure to set up a project environment and to install all the required packages for the project. 
 - You will find the relevant code to execute in the [source folder](src/):
-    - [data retrieval folder](src/api_data_retrieval): If you would like to go through the process of retrieving the original dataset yourself, you will find the code in this folder. You will also need to follow these steps to set up a Google BigQuery:
+    - [data retrieval](src/data_retrieval_and_sampling.py): If you would like to go through the process of retrieving the original dataset yourself, you will find the code in this file. You will also need to follow these steps to set up a Google BigQuery:
         1. Set up an account on [Google Cloud Platform](https://console.cloud.google.com/).
         2. Follow [steps 1-4](https://cloud.google.com/bigquery/docs/quickstarts/quickstart-client-libraries#client-libraries-install-python) on using client libraries.
         3. Place the JSON file (see step b) with your key in your directory [here](data/raw) and name it "GoogleBigQuery_key.json".
-    **Alternatively**, just download the **final sample** dataset [here](https://drive.google.com/file/d/1ve6gzOKgJhdESAv2MLImbqZRi4VsSL5q/view?usp=sharing) and place it [here](data/raw) in your repository. If you use this dataset, you will not need to execute the data_retrieval_and_sampling.py file, start by directly running the [preprocessing.py script](src/data_manipulation) instead.
-    - [data exploration](src/data_exploration): You will find some code to explore the data visually in this folder. Graphs are saved in the [reports/figures](reports/figures) folder.
+    **Alternatively**, just download the **final sample** dataset [here](https://drive.google.com/file/d/1ve6gzOKgJhdESAv2MLImbqZRi4VsSL5q/view?usp=sharing) and place it [here](data/raw) in your repository. If you use this dataset, you will not need to execute the data_retrieval_and_sampling.py file, simply start by directly running the [preprocessing.py script](src/preprocessing.py) instead.
+    - data exploration: The data was explored iteratively and throughout the data retrieval, preprocessing and modeling process, so scripts to explore the data are contained throughout the py-scripts. Graphs are saved in the [reports/figures](reports/figures) folder.
 
     *Distribution of Stack Overflow answer scores*
     <p align="center">
@@ -57,7 +57,7 @@ Do you have questions, did you spot mistakes or would like to provide feedback o
 ### Acknowledgements 
 
 This project was part of a Machine Learning course hosted by [FrauenLoop](https://www.frauenloop.org/).
-Huge thanks goes to the wonderful hosts and mentors of the course, [Samantha Edds](https://github.com/samanthaedds) and [Laura Fernández Gallardo](https://github.com/laufergall), who generously shared their time and expertise.
+Huge thanks goes to the wonderful hosts and mentors of the course, [Samantha Edds](https://github.com/samanthaedds) and [Laura Fernández Gallardo](https://github.com/laufergall), who generously shared their time and expertise with us.
 Many thanks also to my class mates, for creating a great atmosphere for co-learning and for asking many interesting questions that helped us grow, and of course to the brilliant FrauenLoop community!
 
 ![You rock](https://michellecarlslund.com/wp-content/uploads/2018/02/you-rock.jpg)
