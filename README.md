@@ -18,6 +18,11 @@ The **purpose** of this project was to **develop a model** that would provide us
 <p align="right">
 <img src="https://raw.githubusercontent.com/HDMax93/Predicting-Helpfulness-Of-Stackoverflow-Answers/master/reports/figures/StackOverflow_GoodAnswer.jpg" width="350"/> </p>
 
+Example of a downvoted Stack Overflow answer | Example of an upvoted Stack Overflow question
+:-------------------------:|:-------------------------:
+![](ttps://raw.githubusercontent.com/HDMax93/Predicting-Helpfulness-Of-Stackoverflow-Answers/master/reports/figures/StackOverflow_BadQuestion.png)  |  ![](https://raw.githubusercontent.com/HDMax93/Predicting-Helpfulness-Of-Stackoverflow-Answers/master/reports/figures/StackOverflow_GoodAnswer.jpg)
+
+
 **The project objectives were to**:
 
 - **Empower users** to edit and improve their answers before publishing them through live predictions, to **maximize their usefulness** to the community.
