@@ -17,7 +17,7 @@ Example of Stack Overflow question and tags |
 
 Example of Stack Overflow question and tags |
 :-------------------------:|
-<img src="https://raw.githubusercontent.com/HDMax93/Predicting-Helpfulness-Of-Stackoverflow-Answers/master/reports/figures/stackoverflow_answerscore_distribution.png" width="450"/> |
+<img src="https://raw.githubusercontent.com/HDMax93/Predicting-Helpfulness-Of-Stackoverflow-Answers/master/reports/figures/StackOverflow_Question_Tag.jpg" width="500"/> |
 
 
 Example of a downvoted Stack Overflow answer | Example of an upvoted Stack Overflow question
