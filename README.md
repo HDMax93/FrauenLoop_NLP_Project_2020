@@ -53,7 +53,7 @@ Beyond Stack Overflow, there are many use cases across online help fora that wou
     
     
     - [data manipulation](src/preprocessing.py): Run this script to preprocess the data you retrieved using Google BigQuery API or that you downloaded.
-    - [feature extraction](src/feature_extraction.py): This file contains the script for testing if the features are extracted as desired, using the [feature extraction helper functions and classes](src/common_utils/feature_helpers) in the [common utils folder](src/common_utils). At the moment, the following features are used in the model
+    - [feature extraction](src/feature_extraction.py): This file contains the script for testing if the features are extracted as desired, using the [feature extraction helper functions and classes](src/common_utils/feature_helpers) in the [common utils folder](src/common_utils). At the moment, the following features are used in the model:
         - **ngrams/TF-IDF**: A statistical measure that indicates how important a word is to a document in a corpus of text. The importance increases proportionally to the number of times a word appears in the document but is offset by the frequency of the word in the entire corpus.
         - a simple **wordcount** of the length of the Stack Overflow answer 
         - a **similarity score** that measures the extent to which the question asked and the answer provided are similar.
@@ -64,9 +64,9 @@ Beyond Stack Overflow, there are many use cases across online help fora that wou
 
 ### Next steps
 
-- This project remains work-in-progress. Some of the next steps I will be working on are:
+This project remains work-in-progress. Here are some of the next steps I will be working on:
 
-1. **Enhancing the data quality**: Thinking about additional or better data to retrieve as the basis to train the model.
+1. **Enhancing the data quality**: Thinking about different sampling strategies as well as additional or better data to retrieve as the basis to train the model.
 2. **Generating more features**: Trying additional techniques, such as using a pre-trained or self-trained models for word embeddings, to create additional features.
 3. **Deploying the model**: Putting a pilot of the model into production.
 
