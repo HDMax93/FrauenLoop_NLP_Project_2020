@@ -14,12 +14,6 @@ Example of Stack Overflow question and tags |
 :-------------------------:|
 ![](https://raw.githubusercontent.com/HDMax93/Predicting-Helpfulness-Of-Stackoverflow-Answers/master/reports/figures/StackOverflow_Question_Tag.jpg) |
 
-
-Example of Stack Overflow question and tags |
-:-------------------------:|
-<img src="https://raw.githubusercontent.com/HDMax93/Predicting-Helpfulness-Of-Stackoverflow-Answers/master/reports/figures/StackOverflow_Question_Tag.jpg" width="500"/> |
-
-
 Example of a downvoted Stack Overflow answer | Example of an upvoted Stack Overflow question
 :-------------------------:|:-------------------------:
 ![](https://raw.githubusercontent.com/HDMax93/Predicting-Helpfulness-Of-Stackoverflow-Answers/master/reports/figures/StackOverflow_BadQuestion.png)  |  ![](https://raw.githubusercontent.com/HDMax93/Predicting-Helpfulness-Of-Stackoverflow-Answers/master/reports/figures/StackOverflow_GoodAnswer.jpg)
