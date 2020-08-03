@@ -27,9 +27,9 @@ Beyond Stack Overflow, there are many use cases across online help fora that wou
 
 ### Key insights
 
-1. Using Gradient Boosting Classifier for the three-class classification, an accuracy of 0.51 was reached, leaving much room for improvement.
+1. Using **Gradient Boosting Classifier** for the **three-class classification**, an **accuracy of 0.51** was reached, leaving much room for improvement.
 2. Contrary to intial assumptions, the text data consisting of answers, questions and answer tags could not sufficiently help differentiate between a bad, good and great answer.
-3. Additional data and features are needed to provide predictions on the quality of user answers with a high accuracy.
+3. **Additional data** and **features** are needed to provide **predictions** on the quality of user answers with a **high accuracy**.
 
 ### Data
 
@@ -53,7 +53,7 @@ Beyond Stack Overflow, there are many use cases across online help fora that wou
     
     
     - [data manipulation](src/preprocessing.py): Run this script to preprocess the data you retrieved using Google BigQuery API or that you downloaded.
-    - [feature extraction](src/feature_extraction.py): This file contains the script for testing if the features are extracted as desired, using the [feature extraction classes](src/common_utils/feature_helpers) in the [common utils folder](src/common_utils).
+    - [feature extraction](src/feature_extraction.py): This file contains the script for testing if the features are extracted as desired, using the [feature extraction helper functions and classes](src/common_utils/feature_helpers) in the [common utils folder](src/common_utils).
     - [model training](src/modeling.py): You will find the script for choosing, training and hypertuning the model here.
 - [final model](models): If you execute the above scripts, your final model will be stored in this place. If you would like to download the final model directly, you can do so by clicking on [this link](DOWNLOAD LINK HERE).
 - [notebooks](notebooks): This folder contains some exploratory notebooks created in the process of finding the model.
