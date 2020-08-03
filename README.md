@@ -10,17 +10,9 @@ Most aspiring developers, analysts, and data scientists depend on and owe much o
 
 The **purpose** of this project was to **develop a model** that would provide users on Stack Overflow with an **advance estimate** of how helpful their answer to a question is going to be to other users. Past questions, answers and answer scores were used to train a model that would predict if a new answer was likely to receive a **bad**, **good** or **great** score. 
 
-*Example of a downvoted Stack Overflow answer | Example of an upvoted Stack Overflow question*
-
-<p align="left">
-<img src="https://raw.githubusercontent.com/HDMax93/Predicting-Helpfulness-Of-Stackoverflow-Answers/master/reports/figures/StackOverflow_BadQuestion.png" width="450"/> </p>
-    
-<p align="right">
-<img src="https://raw.githubusercontent.com/HDMax93/Predicting-Helpfulness-Of-Stackoverflow-Answers/master/reports/figures/StackOverflow_GoodAnswer.jpg" width="350"/> </p>
-
 Example of a downvoted Stack Overflow answer | Example of an upvoted Stack Overflow question
 :-------------------------:|:-------------------------:
-![](ttps://raw.githubusercontent.com/HDMax93/Predicting-Helpfulness-Of-Stackoverflow-Answers/master/reports/figures/StackOverflow_BadQuestion.png)  |  ![](https://raw.githubusercontent.com/HDMax93/Predicting-Helpfulness-Of-Stackoverflow-Answers/master/reports/figures/StackOverflow_GoodAnswer.jpg)
+![](https://raw.githubusercontent.com/HDMax93/Predicting-Helpfulness-Of-Stackoverflow-Answers/master/reports/figures/StackOverflow_BadQuestion.png)  |  ![](https://raw.githubusercontent.com/HDMax93/Predicting-Helpfulness-Of-Stackoverflow-Answers/master/reports/figures/StackOverflow_GoodAnswer.jpg)
 
 
 **The project objectives were to**:
