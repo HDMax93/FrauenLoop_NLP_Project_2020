@@ -53,10 +53,22 @@ Beyond Stack Overflow, there are many use cases across online help fora that wou
     
     
     - [data manipulation](src/preprocessing.py): Run this script to preprocess the data you retrieved using Google BigQuery API or that you downloaded.
-    - [feature extraction](src/feature_extraction.py): This file contains the script for testing if the features are extracted as desired, using the [feature extraction helper functions and classes](src/common_utils/feature_helpers) in the [common utils folder](src/common_utils).
+    - [feature extraction](src/feature_extraction.py): This file contains the script for testing if the features are extracted as desired, using the [feature extraction helper functions and classes](src/common_utils/feature_helpers) in the [common utils folder](src/common_utils). At the moment, the following features are used in the model
+        - **ngrams/TF-IDF**: A statistical measure that indicates how important a word is to a document in a corpus of text. The importance increases proportionally to the number of times a word appears in the document but is offset by the frequency of the word in the entire corpus.
+        - a simple **wordcount** of the length of the Stack Overflow answer 
+        - a **similarity score** that measures the extent to which the question asked and the answer provided are similar.
+        - an indication of whether or not the answer asked contains one of the **top 50 tags** on Stack Overflow.
     - [model training](src/modeling.py): You will find the script for choosing, training and hypertuning the model here.
 - [final model](models): If you execute the above scripts, your final model will be stored in this place. If you would like to download the final model directly, you can do so by clicking on [this link](DOWNLOAD LINK HERE).
 - [notebooks](notebooks): This folder contains some exploratory notebooks created in the process of finding the model.
+
+### Next steps
+
+- This project remains work-in-progress. Some of the next steps I will be working on are:
+
+1. **Enhancing the data quality**: Thinking about additional or better data to retrieve as the basis to train the model.
+2. **Generating more features**: Trying additional techniques, such as using a pre-trained or self-trained models for word embeddings, to create additional features.
+3. **Deploying the model**: Putting a pilot of the model into production.
 
 ### Giving feedback
 
