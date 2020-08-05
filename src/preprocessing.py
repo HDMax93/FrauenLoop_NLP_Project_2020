@@ -14,7 +14,6 @@ warnings.filterwarnings("ignore")
 ### Import packages to visualize data
 
 import matplotlib.pyplot as plt
-%matplotlib inline
 import seaborn as sns
 
 ### Read in dataset
