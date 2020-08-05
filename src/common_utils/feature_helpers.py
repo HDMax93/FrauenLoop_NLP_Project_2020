@@ -288,13 +288,21 @@ class Ngrams(BaseEstimator, TransformerMixin):
                                      ngram_range = (1, 2) , max_features = 300)
         ### Fit to data
         X_train = vectorizer.fit_transform(df[name[0]].values.astype(str))
-
         ### Return sparse matrix
         return X_train
     
     def fit(self, df, y=None):
         ### Unless error returns self
         return self
+
+
+### Extract a list of the 50 most common question Tags
+
+def toptagslist(text_column):
+    tags_joined = " ".join(text_column)
+    tags_split = tags_joined.split()
+    most_common_words = [word for word, word_count in Counter(tags_split).most_common(50)]
+    return most_common_words
 
 ### One-hot encode top 50 question tags
 
