@@ -81,9 +81,35 @@ stackover_new = ngrams.transform(stackoverflow[['answer_text_clean']])
 
 print(stackover_new)
 
+### Check if TopTagsEncoder works as desired
+
+toptagencoded = TopTagEncoder(stackoverflow)
+stack_tags_new = toptagencoded.transform(stackoverflow['tag_list_clean'])
+
+print(stack_tags_new)
+
+from collections import Counter
+tags_joined = " ".join(stackoverflow['tag_list_clean'])
+tags_split = tags_joined.split()
+print(tags_split)
+most_common_words = [word for word, word_count in Counter(tags_split).most_common(50)]
+print(most_common_words)
+
+def toptagslist(text_column):
+    tags_joined = " ".join(text_column)
+    tags_split = tags_joined.split()
+    most_common_words = [word for word, word_count in Counter(tags_split).most_common(50)]
+    return most_common_words
+
+top_tags = stackoverflow['tag_list_clean'].apply(toptagslist)
+print(top_tags)
 
 ### Save data tested on feature extraction functions to a csv file
 
 base_path = Path("__file__").parent
 full_path = (base_path / "../data/processed/stackoverflow_modeling.csv").resolve()
 stackoverflow.to_csv(os.path.join(full_path))
+
+
+
+
