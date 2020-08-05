@@ -17,6 +17,7 @@ pip install matplotlib
 pip install seaborn
 pip install plotly
 
-### Packages needed for modeling
+### Packages needed for tuning and modeling
 
 pip install -U scikit-learn
+pip install hyperopt
