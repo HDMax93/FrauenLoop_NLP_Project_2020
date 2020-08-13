@@ -15,7 +15,7 @@ import re
 
 ### Import feature extraction help functions
 
-from common_utils.feature_helpers import JaccardSimilarity, Similarity, WordCounter, CodeCheck, CodeCounter, Ngrams, TopTagEncoder
+from common_utils.feature_helpers import JaccardSimilarity, Similarity, WordCounter, CodeCheck, CodeCounter, Ngrams, TopTagEncoder, toptagslist
 
 ### Read in dataset
 
@@ -26,6 +26,40 @@ full_path = (base_path / "../data/processed/stackoverflow_preprocessed_all.csv")
 stackoverflow = pd.read_csv(os.path.join(full_path))
 
 stackoverflow.info()
+
+### Preparing input for training word embeddings
+
+from gensim.models import Word2Vec
+
+sentences = [str(x).split(' ') for x in stackoverflow['answer_text_clean']]
+print(sentences)
+
+model = Word2Vec(sentences, 
+                 min_count=5,   # Ignore words that appear less than this
+                 size=300,      # Dimensionality of word embeddings
+                 workers=4,     # Number of processors (parallelisation)
+                 window=5,      # Context window for words during training
+                 iter=10,       # Number of epochs training over corpus
+                 )
+
+model.vector_size
+len(model.wv.vocab)
+model.most_similar('easy')
+model.most_similar('python')
+
+
+from sklearn.decomposition import PCA
+from matplotlib import pyplot
+
+X = model[model.wv.vocab]
+pca = PCA(n_components=2)
+result = pca.fit_transform(X)
+# create a scatter plot of the projection
+pyplot.scatter(result[:, 0], result[:, 1])
+words = list(model.wv.vocab)
+for i, word in enumerate(words):
+	pyplot.annotate(word, xy=(result[i, 0], result[i, 1]))
+pyplot.show()
 
 ### Drop all observations / rows with any missing values in the column "answer_text_clean"
 
@@ -67,7 +101,6 @@ stackover_new['code_binary'].value_counts()
 
 codecount = CodeCounter(stackoverflow) 
 stack_new = codecount.transform(stackoverflow)
-
 stack_new.head()
 
 ### Check distribution of code counts
@@ -78,38 +111,17 @@ stack_new['code_count'].value_counts().sort_index()
 
 ngrams = Ngrams(stackoverflow['answer_text_clean'])
 stackover_new = ngrams.transform(stackoverflow[['answer_text_clean']])
-
 print(stackover_new)
 
 ### Check if TopTagsEncoder works as desired
 
 toptagencoded = TopTagEncoder(stackoverflow)
-stack_tags_new = toptagencoded.transform(stackoverflow['tag_list_clean'])
-
+stack_tags_new = toptagencoded.transform(stackoverflow)
 print(stack_tags_new)
-
-from collections import Counter
-tags_joined = " ".join(stackoverflow['tag_list_clean'])
-tags_split = tags_joined.split()
-print(tags_split)
-most_common_words = [word for word, word_count in Counter(tags_split).most_common(50)]
-print(most_common_words)
-
-def toptagslist(text_column):
-    tags_joined = " ".join(text_column)
-    tags_split = tags_joined.split()
-    most_common_words = [word for word, word_count in Counter(tags_split).most_common(50)]
-    return most_common_words
-
-top_tags = stackoverflow['tag_list_clean'].apply(toptagslist)
-print(top_tags)
 
 ### Save data tested on feature extraction functions to a csv file
 
 base_path = Path("__file__").parent
 full_path = (base_path / "../data/processed/stackoverflow_modeling.csv").resolve()
 stackoverflow.to_csv(os.path.join(full_path))
-
-
-
 

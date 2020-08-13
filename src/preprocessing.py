@@ -1,8 +1,7 @@
 ### Import packages for preprocessing
 
 import pandas as pd
-from common_utils.nltk_helpers import nltk2wn_tag, lemmatize_sentence
-from common_utils.nltk_helpers import preprocessor, tagcleaner
+from common_utils.nltk_helpers import nltk2wn_tag, lemmatize_sentence, preprocessor, tagcleaner
 
 ### Import packages to create absolute file path & make code independent of operating system
 
@@ -31,7 +30,7 @@ stackoverflow.head()
 
 ### Drop any columns from dataframe not holding useful information
 
-stackoverflow = stackoverflow.drop(columns=['Unnamed: 0', 'Unnamed: 0.1', 'Unnamed: 0.1.1', 'question_id', 'question_id_check'])
+stackoverflow = stackoverflow.drop(columns=['Unnamed: 0', 'Unnamed: 0.1', 'question_id', 'question_id_check'])
 
 ### Print out variable types for overview
 
@@ -69,11 +68,9 @@ for var_name in text_cols:
     new_var = "%s_%s" % (var_name, "clean")
     stackoverflow[new_var] = stackoverflow[var_name].apply(preprocessor)
 
-
 ### Applying tag cleaner function to tags column
 
 stackoverflow['tag_list_clean'] = stackoverflow['tags'].apply(tagcleaner)
-
 
 ### Check if preprocessed text looks as desired
 
