@@ -17,6 +17,10 @@ pip install matplotlib
 pip install seaborn
 pip install plotly
 
+### Packages needed for feature extraction
+
+pip install --upgrade gensim
+
 ### Packages needed for tuning and modeling
 
 pip install -U scikit-learn
