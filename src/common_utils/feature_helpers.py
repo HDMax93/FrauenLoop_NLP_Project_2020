@@ -10,6 +10,7 @@ from sklearn.base import BaseEstimator, TransformerMixin
 from sklearn.feature_extraction.text import TfidfVectorizer
 from difflib import SequenceMatcher
 from sklearn.preprocessing import MultiLabelBinarizer
+from collections import Counter
 
 ### Determining similarity of question and answer
 class JaccardSimilarity(BaseEstimator, TransformerMixin):
@@ -299,10 +300,39 @@ class Ngrams(BaseEstimator, TransformerMixin):
 ### Extract a list of the 50 most common question Tags
 
 def toptagslist(text_column):
+    """Extract the top 50 tags from the corpus of tags and return a list of these tags.
+
+    Parameters
+    ----------
+    text_column : str
+            E.g. object-type column of a dataframe containing a list of strings.
+
+    Returns
+    -------
+    list
+        a list of strings
+    """
+    
     tags_joined = " ".join(text_column)
     tags_split = tags_joined.split()
     most_common_words = [word for word, word_count in Counter(tags_split).most_common(50)]
     return most_common_words
+
+'''
+tags_joined = " ".join(stackoverflow['tag_list_clean'])
+print(tags_joined)
+type(tags_joined)
+tags_split = tags_joined.split()
+print(tags_split)
+type(tags_split)
+most_common_words = [word for word, word_count in Counter(tags_split).most_common(50)]
+print(most_common_words)
+type(most_common_words)
+
+text_column = stackoverflow['tag_list_clean']
+top_tags = text_column.apply(toptagslist)
+print(top_tags)
+'''
 
 ### One-hot encode top 50 question tags
 
@@ -335,9 +365,8 @@ class TopTagEncoder(BaseEstimator, TransformerMixin):
 
         df_new = df[['tag_list_clean']].copy()
         ### List of the top 50 tags on Stack Overflow
-        var_list = ['javascript', 'java', 'python', 'c#', 'php', 'android', 'html', 'c++', 'jquery', 'css', 'ios', 'mysql', 'sql', 'asp.net', 'r', 'node.js', 'arrays', 'c', 'ruby-on-rails', '.net', 'json', 'objective-c', 'sql-server', 'swift', 'angularjs', 'python-3.x', 'django', 'reactjs', 'excel', 'regex', 'angular', 'iphone', 'ruby', 'ajax', 'xml', 'linux', 'asp.net-mvc', 'vba', 'spring', 'database', 'wordpress', 'panas', 'wpf', 'string', 'laravel', 'xcode', 'windows', 'mongodb', 'vb.net', 'bash']
-        ### write function to generate this list!
-        for var in var_list:
+        top_tags = df['tag_list_clean'].apply(toptagslist)
+        for var in top_tags:
             ### Create column name "has_tagname" for each tag in list
             new_var_name = "%s_%s" % ("has", var)
             ### Create dataframe column for each tag, and if original tag-column contains tag, assign 1
@@ -348,3 +377,9 @@ class TopTagEncoder(BaseEstimator, TransformerMixin):
     def fit(self, df, y=None):
         ### Unless error returns self
         return self
+
+
+        # top_tags = ['javascript', 'java', 'python', 'c#', 'php', 'android', 'html', 'c++', 'jquery', 'css', 'ios', 'mysql', 'sql', 'asp.net', 'r', 'node.js', 'arrays', 'c', 'ruby-on-rails', '.net', 'json', 'objective-c', 'sql-server', 'swift', 'angularjs', 'python-3.x', 'django', 'reactjs', 'excel', 'regex', 'angular', 'iphone', 'ruby', 'ajax', 'xml', 'linux', 'asp.net-mvc', 'vba', 'spring', 'database', 'wordpress', 'panas', 'wpf', 'string', 'laravel', 'xcode', 'windows', 'mongodb', 'vb.net', 'bash']
+#top_tags = stackoverflow[['tag_list_clean']].apply(toptagslist)
+# print(top_tags)
+
